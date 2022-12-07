@@ -21,4 +21,7 @@ def backtrack(y,n,contador):
         global columna
         global diagonal_izquierda
         global diagonal_derecha
-        
+ # la primera diagonal es la diagonal normal
+ # y la segunda es la invertida
+        if(columna[x] or diagonal_izquierda[x+y] or diagonal_derecha[x-y+n-1]):
+            continue
