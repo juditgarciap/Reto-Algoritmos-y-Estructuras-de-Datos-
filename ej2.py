@@ -16,3 +16,9 @@ def backtrack(y,n,contador):
     if (y==n):
         #retorna
         return contador + 1
+
+    for x in range(n):
+        global columna
+        global diagonal_izquierda
+        global diagonal_derecha
+        
