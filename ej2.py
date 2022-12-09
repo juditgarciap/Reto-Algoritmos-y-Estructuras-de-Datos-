@@ -41,3 +41,9 @@ def backtrack(y,n,contador):
         solucion.pop(-1)
     return contador
 
+solucion_encontrada = backtrack(0,n,contador)
+# modifca la solucion para entregarla según especificaciones
+solucion_problema = [ pos[1] for pos in sorted(solucion, key=lambda x: x[0])]
+
+# esta es la solucion que debe ir en la tabla
+print(solucion_problema)   
