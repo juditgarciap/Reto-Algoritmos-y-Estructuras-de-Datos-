@@ -38,4 +38,29 @@ def yield_sequences(starting_position, num_hops, sequence=None):
 
 
 
+def count_sequences(num_hops):
+    num_sequences = 0
+    # para cada posible numero de inicio se busca cuantos movimientos
+    # son posibles de realizar
+    # finalmente se cuentan cuantos movimientos por numero
+    for posible_start_number in [1,2,3,4,5,6,7,8,9,0]:
+        for sequence in yield_sequences(posible_start_number, num_hops):
+            num_sequences += 1
+    return num_sequences
 
+
+# para completar la tabla
+for n_hop in [1,2,3,5,8,10,15,18,21,23,32]:
+    pos_val = count_sequences(num_hops=n_hop)
+    print('Número de movimientos: {} --> posibilidades válidas: {}'.format(n_hop, pos_val))
+    
+#Número de movimientos: 1 --> posibilidades válidas: 20
+#Número de movimientos: 2 --> posibilidades válidas: 46
+#Número de movimientos: 3 --> posibilidades válidas: 104
+#Número de movimientos: 5 --> posibilidades válidas: 544
+#Número de movimientos: 8 --> posibilidades válidas: 6576
+#Número de movimientos: 10 --> posibilidades válidas: 34432
+#Número de movimientos: 15 --> posibilidades válidas: 2140672
+#Número de movimientos: 18 --> posibilidades válidas: 25881088
+#Número de movimientos: 21 --> posibilidades válidas: 307302400
+#Número de movimientos: 23 --> posibilidades válidas: 1609056256 
